@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: white;
+    outline: black;
+    text-shadow: 1px 1px 1px black;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#MainFlex {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #0303037a;
+}
+
+/* header edições*/
+
+header {
+    background-color: #000000;
+    height: 10vh;
+    display: flex;
+    padding: 0 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.decrease {
+    width: 50px;
+    height: 50px;
+}
+
+h1, h2 {
+    color: white;
+    text-shadow: 2px 3px 1px #8a8787;
+    font-size: 4vh;
+}
+
+.search {
+    width: 40vw;
+    display: flex;
+    align-items: center;
+}
+
+input {
+    width: 40vw;
+    height: 5vh;
+    background-color: rgba(255, 235, 205, 0);
+}
+
+/* main */
+main {
+    flex-grow: 1;
+    display: flex;
+    overflow: auto;
+    flex-direction: row;
+    display: grid;
+    grid-template-rows: 0.05fr 0.05fr 0.05fr 0.05fr;
+    grid-template-columns: 0.7fr 0.7fr 0.7fr 0.7fr;
+    justify-items: center;
+    align-items: center;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 13px;
+}
+
+h3 {
+    margin-top: 15px;
+}
+
+.decrease1 {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    margin-top: 50px;
+}
+
+.zoom img {
+	max-width: 95%;
+	margin-left: 50px;
+	margin-right: 50px;
+	-moz-transition: all 0.3s;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.zoom:hover img{
+	-moz-transform: scale(0.90);
+	-webkit-transform: scale(0.90);
+	transform: scale(0.90);
+}
+
+/* main video */
+
+.MainVideo {
+    flex-grow: 1;
+    display: flex;
+    overflow: auto;
+    flex-direction: column;
+    align-items: center;
+}
+
+video {
+    margin: auto;
+    height: 60vh;
+    width: 60vw;
+}
+
+h2 {
+    margin-bottom: 30px;
+}
+
+/* footer edições */
+
+footer {
+    background-color: black;
+    color: #ebebeb;
+    height: 6vh;
+    text-align: center;
+    padding-top: 10px;
+} 
+
+/* celulares */
+
+@media screen and (min-device-width : 320px) and (max-device-width : 480px) {
+
+    main {
+        flex-grow: 1;
+        display: flex;
+        overflow: auto;
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        align-items: center;
+        padding-top: 20px;
+        text-align: center;
+        font-size: 13px;
+    }
+
+    .decrease {
+        width: 40px;
+        height: 40px;
+    }
+    
+    input {
+        width: 30vw;
+        height: 5vh;
+    }
+
+    video {
+        margin: auto;
+        height: 80vh;
+        width: 80vw;
+    }
+}
