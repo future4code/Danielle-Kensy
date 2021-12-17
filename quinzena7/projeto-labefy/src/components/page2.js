@@ -1,27 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
+import ReactPlayer from 'react-player'
 
 const Div = styled.div`
-    display: flex;
+     /* display:flex;
+     align-content: center; */
 
-`
-
-const Grid = styled.div`
-    display: grid;
-    grid-template-rows: 15vh 15vh 15vh 15vh 15vh;
-    grid-template-columns: 20vw 20vw 20vw;
-    justify-items: center;
-    align-items: center;
-    color: white;
-    margin-left: 8vw;
 `
 
 const DivMap = styled.div`
     background-color: #a68cd8;
     color: white;
-    height: 12vh;
-    width: 15vw;
+    height: 15vh;
+    width: 30vw;
     font-family: arial black;
     text-align: center;
     border-radius: 5px;
@@ -29,15 +21,27 @@ const DivMap = styled.div`
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    margin-bottom: 5vh;
 
     :hover {
         border: 2px solid white;
 
     }
 
+    p {
+        margin-block-start: 0.05em;
+        margin-block-end: 0.05em;
+
+    }
+
+    p:hover {
+        border: 1px solid white;
+        cursor: pointer;
+    }
+
     button {
-        width: 9vw;
-        height: 3vh;
+        width: 13vw;
+        height: 2.5vh;
         background-color: #4e5173;
         border-radius: 10px;
         color: white;
@@ -47,6 +51,11 @@ const DivMap = styled.div`
     button:hover {
         cursor: pointer;
         background-color: #787cab;
+    }
+
+    audio {
+        width: 18vw;
+        height: 3vh;
     }
 `
 
@@ -61,6 +70,7 @@ export class Page2 extends React.Component {
 
         //função para exibir playlist
     ExibirTracks = (playlistId) => {
+
         axios
     
         .get(
@@ -75,6 +85,7 @@ export class Page2 extends React.Component {
         .then((res) => {
             //povando o array de estado com os dados da API
             this.setState({tracks: res.data.result.tracks})
+            console.log(this.state.tracks)
         })
         .catch((err) => {
             console.log(err.response);
@@ -84,21 +95,23 @@ export class Page2 extends React.Component {
 
     
     render(){
-
+        
         const playlist = this.props.playlist
+        this.ExibirTracks(playlist.id)
         
         return (
             <Div>
 
-                <button onClick={() => this.props.previousPage()}>Voltar</button>
-
-                {this.ExibirTracks(playlist.id)}
-
-
+                
                 {this.state.tracks.map((track) => {
                     return (
                         <DivMap>
                             {track.name}
+                            <audio autoPlay={false}  controls='controls'>
+                            <source src={track.url} type='audio/mp3' />
+                            </audio>
+                            <button onClick={() => this.props.previousPage()}>Voltar</button>
+
                         </DivMap> 
                     ) 
                 })} 

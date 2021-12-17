@@ -66,20 +66,21 @@ const Playlists = styled.div`
 `
 
 const Grid = styled.div`
-    display: grid;
-    grid-template-rows: 15vh 15vh 15vh 15vh 15vh;
-    grid-template-columns: 20vw 20vw 20vw;
+    display: flex;
+    flex-direction: column;
+    /* grid-template-rows: 15vh 15vh 15vh 15vh 15vh;
+    grid-template-columns: 20vw 20vw 20vw; */
     justify-items: center;
     align-items: center;
     color: white;
-    margin-left: 8vw;
+    margin-left: 22vw;
 `
 
 const DivMap = styled.div`
     background-color: #a68cd8;
     color: white;
-    height: 12vh;
-    width: 15vw;
+    height: 15vh;
+    width: 30vw;
     font-family: arial black;
     text-align: center;
     border-radius: 5px;
@@ -87,6 +88,7 @@ const DivMap = styled.div`
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    margin-bottom: 5vh;
 
     :hover {
         border: 2px solid white;
@@ -94,18 +96,18 @@ const DivMap = styled.div`
     }
 
     button {
-        width: 9vw;
-        height: 3vh;
+        width: 15vw;
+        height: 4vh;
         background-color: #4e5173;
         border-radius: 10px;
         color: white;
-
     }
 
     button:hover {
         cursor: pointer;
         background-color: #787cab;
     }
+
 `
 
 export class Page1 extends React.Component {
@@ -330,7 +332,7 @@ export class Page1 extends React.Component {
                         {this.state.playlists.map((playlist) => {
                             return (
                                 this.state.page ===1 ? 
-                                <DivMap onClick={this.nextPage}>
+                                <DivMap onClick={this.nextPage} >
                                     {playlist.name}
                                     <button onClick={() => this.DeletarPlaylist(playlist.id)}>Deletar Playlist</button>
                                     <button onClick={() => this.AdicionarMusica(playlist.id)}>Adicionar Música</button>
