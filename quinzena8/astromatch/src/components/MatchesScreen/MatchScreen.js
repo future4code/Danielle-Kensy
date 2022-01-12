@@ -5,7 +5,7 @@ import styled from "styled-components";
 const Main = styled.div`
     display: flex;
     flex-direction: column;
-    border: 2px solid black;
+    border: 3px solid white;
     margin: 0 auto;
     margin-top: 3vh;
     height: 80vh;
@@ -13,22 +13,21 @@ const Main = styled.div`
     text-align: center;
     color: white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    border: 5px dotted white;
     border-radius: 10px;
-    background-color: #c091f2;
+    background-color: #73628A;
   
     button{
         margin: 0 auto;
         height: 5vh;
         width: 15vw;
-        background-color: #ed685f;
+        background-color: #CBC5EA;
         border-radius: 15px;
         border: none;
         color: white;
     }
 
     button:hover {
-        background-color: #f53636;
+        background-color: #a89beb;
     }
 
     hr {
@@ -84,7 +83,7 @@ const MatchScreen = () => {
 
     return(
         <Main>
-            <h2>AstroMatch</h2>
+            <h2>Seus Matches</h2>
             <hr/>
             {match.map((match) => {
                 return (

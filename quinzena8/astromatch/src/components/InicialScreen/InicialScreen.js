@@ -5,9 +5,9 @@ import styled from "styled-components";
 const Main = styled.div`
     display: flex;
     flex-direction: column;
-    border: 5px dotted white;
+    border: 3px solid white;
     border-radius: 10px;
-    background-color: #c091f2;
+    background-color: #73628A;
     margin: 0 auto;
     height: 80vh;
     width: 30vw;
@@ -32,21 +32,6 @@ const Main = styled.div`
         margin-bottom: 3px;
         text-shadow: 1px 0.5px black;
     }
-
-    button{
-        margin-left: 1vw;
-        margin-right: 1vw;
-        height: 5vh;
-        width: 6vw;
-        background-color: #ed685f;
-        border-radius: 15px;
-        border: none;
-        color: white;
-    }
-
-    button:hover {
-        background-color: #f53636;
-    }
     
     hr {
         width: 25vw;
@@ -55,7 +40,7 @@ const Main = styled.div`
 const Image = styled.img`
     height: 40vh;
     width: 50vh;
-    border-radius: 80px;
+    border-radius: 10px;
 `
 
 const Buttons = styled.div`
@@ -66,14 +51,14 @@ const Buttons = styled.div`
         margin-left: 1vw;
         margin-right: 1vw;
         height: 6vh;
-        width: 4vw;
-        background-color: #ed685f;
+        width: 8vw;
+        background-color: #CBC5EA;
         border-radius: 15px;
         border: none;
     }
 
     button:hover {
-        background-color: #f53636;
+        background-color: #a89beb;
     }
 
 `
@@ -81,13 +66,28 @@ const Buttons = styled.div`
 const InicialScreen = () => {
 
     const [profile, setProfile] = useState({})
-      //declaração do estado dos matchs
-    const [makeMatch, setMakeMatch] = useState(null)
+    
+    //declaração do estado dos matchs
+    const [makeMatch, setMakeMatch] = useState({})
+    
+    //função para pegar um perfil
+    const getProfile = () => {
+        axios
+        .get(
+            `https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:aluno/person`,
+            {
+                headers: {
+                    Authorization: "Dani"
+                }
+            }
+            )
+        .then((res) => setProfile(res.data.profile))
+        .catch((err) => {console.log(err)})
+    }
 
     const onClickMatchValue = (e) => {
         setMakeMatch(e.target.value)
     }
-
 
     //função para dar match
     const MakeTheMatch = () => {
@@ -107,38 +107,22 @@ const InicialScreen = () => {
 
         axios
         .post(URL, body, headers) 
-        .then((res) => {console.log(res.data)})
+        .then((res) => {setMakeMatch(res.data.isMatch)})
         .catch((err) => {console.log(err)})
 
     }
-
-    //função para pegar um perfil
-    const getProfile = () => {
-        axios
-        .get(
-            `https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:aluno/person`,
-            {
-                headers: {
-                    Authorization: "Dani"
-                }
-            }
-            )
-        .then((res) => setProfile(res.data.profile))
-        .catch((err) => {console.log(err)})
-    }
+    
     console.log(profile)
 
-      //funções para setar o valor tru ou falso do match
     console.log(makeMatch)
 
     useEffect (() => {
         MakeTheMatch()
-    }, [makeMatch !== null])
+    }, [makeMatch])
 
     useEffect (() => {
         getProfile()
     }, [makeMatch])
-
 
     return(
         <Main>

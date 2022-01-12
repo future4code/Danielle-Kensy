@@ -9,14 +9,13 @@ const Button = styled.button`
   margin-right: 1vw;
   height: 6vh;
   width: 12vw;
-  background-color: #ed685f;
+  background-color: #73628A;
   border-radius: 15px;
-  border: none;
   color: white;
   margin-top: 2vw;
 
 :hover {
-  background-color: #f53636;
+  background-color: #a89beb;
 }
 `
 
