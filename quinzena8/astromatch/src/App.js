@@ -1,7 +1,7 @@
 import './App.css';
 import InicialScreen from './components/InicialScreen/InicialScreen';
 import MatchScreen from './components/MatchesScreen/MatchScreen';
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import styled from "styled-components";
 
 const Button = styled.button`
@@ -32,6 +32,10 @@ function App() {
         setPages("pag1");
       }
   }
+
+  useEffect(() => {
+    document.title = "AstroMatch"
+  }, []);
 
   return (
     <div className="App">

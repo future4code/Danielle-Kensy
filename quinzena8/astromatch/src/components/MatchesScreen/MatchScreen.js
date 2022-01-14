@@ -89,6 +89,7 @@ const MatchScreen = () => {
                 return (
                     <div>
                         <p key={match.id}>{match.id}</p>
+                        <hr/>
                     </div>
                 )
             })}

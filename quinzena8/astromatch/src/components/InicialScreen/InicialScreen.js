@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
 import styled from "styled-components";
+import life from "../../img/life.png";
 
 const Main = styled.div`
     display: flex;
@@ -18,8 +19,8 @@ const Main = styled.div`
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 
     p {
-        margin-right: 1vh;
-        margin-left: 1vh;
+        margin-right: 2vw;
+        margin-left: 2vw;
         margin-top: 5px;
     }
 
@@ -37,10 +38,19 @@ const Main = styled.div`
         width: 25vw;
     }
 `
+const Icon = styled.img`
+    margin-top: 2vh;
+    height: 11vh;
+    width: 6vw;
+`
 const Image = styled.img`
-    height: 40vh;
-    width: 50vh;
-    border-radius: 10px;
+    height: 35vh;
+    width: 37vh;
+    border-radius: 5px;
+    -webkit-box-shadow: -2px 1px 14px 0px rgba(50, 50, 50, 1);
+    -moz-box-shadow:    -2px 1px 14px 0px rgba(50, 50, 50, 1);
+    box-shadow:         -2px 1px 14px 0px rgba(50, 50, 50, 1);
+    
 `
 
 const Buttons = styled.div`
@@ -69,7 +79,7 @@ const InicialScreen = () => {
     
     //declaração do estado dos matchs
     const [makeMatch, setMakeMatch] = useState({})
-    
+
     //função para pegar um perfil
     const getProfile = () => {
         axios
@@ -83,10 +93,6 @@ const InicialScreen = () => {
             )
         .then((res) => setProfile(res.data.profile))
         .catch((err) => {console.log(err)})
-    }
-
-    const onClickMatchValue = (e) => {
-        setMakeMatch(e.target.value)
     }
 
     //função para dar match
@@ -108,8 +114,6 @@ const InicialScreen = () => {
         axios
         .post(URL, body, headers) 
         .then((res) => {setMakeMatch(res.data.isMatch)})
-        .catch((err) => {console.log(err)})
-
     }
     
     console.log(profile)
@@ -117,17 +121,21 @@ const InicialScreen = () => {
     console.log(makeMatch)
 
     useEffect (() => {
-        MakeTheMatch()
-    }, [makeMatch])
-
-    useEffect (() => {
         getProfile()
     }, [makeMatch])
 
+    useEffect (() => {
+        MakeTheMatch() 
+    }, [makeMatch])
+
+    const onClickMatchValue = (e) => {
+        setMakeMatch(e.target.value)
+    }
+
     return(
         <Main>
-            <h1>AstroMatch</h1>
-            <hr/>
+            <Icon src={life}/>
+            <br/>
             <Image src={profile.photo} alt={profile.name} />
             <h3>{profile.name}, {profile.age}</h3>
             <p>{profile.bio}</p>
