@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from "styled-components"
 import tryppy from "../img/spacetryppy.png"
+import {useHistory} from "react-router-dom"
 
 const Buttons = styled.div`
     justify-content: space-between;
@@ -16,13 +17,24 @@ const LogoFrame = styled.img`
 
 const HomePage = () => {
 
+    const history = useHistory();
+
+    const goToListTrips = () => {
+        history.push("/ListTrips")
+    }
+
+    const goToLoginPage = () => {
+        history.push("/LoginPage")
+    }
+
+
     return (
         <div>
             <LogoFrame src={tryppy} alt="logo" />
             <h1>Bem Vindo Viajante!</h1>
             <Buttons>
-                <button>Ver Viagens</button>
-                <button>Área de Admin</button>
+                <button onClick={goToListTrips}>Ver Viagens</button>
+                <button onClick={goToLoginPage}>Área de Admin</button>
             </Buttons>
         </div>
     )

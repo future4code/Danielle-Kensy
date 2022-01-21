@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from "styled-components"
+import {useHistory} from "react-router-dom"
 
 const Buttons = styled.div`
     justify-content: space-around;
@@ -8,6 +9,14 @@ const Buttons = styled.div`
 `
 
 const ApplicationFormPage = () => {
+
+    //Métodos para navegação
+    //declarando o método history para poder usar seus atributos?? sei lá como fala eu ein tem nome pra tudo agora  
+    const history = useHistory();
+
+    const goToListTrips = () => {
+        history.push("/ListTrips")
+    }
 
     return (
         <div>
@@ -52,7 +61,7 @@ const ApplicationFormPage = () => {
                 </select>
             </form>
             <Buttons>
-                <button>Voltar</button>
+                <button onClick={goToListTrips}>Voltar</button>
                 <button>Enviar</button>
             </Buttons>
         </div>

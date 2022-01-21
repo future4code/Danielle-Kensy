@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from "styled-components"
+import {useHistory} from "react-router-dom"
 
 export const Buttons = styled.div`
     display: flex;
@@ -17,11 +18,21 @@ export const AdminDiv = styled.div`
 
 const AdminHomePage = () => {
 
+    const history = useHistory();
+
+    const goToHomePage = () => {
+        history.push("/")
+    }
+
+    const goToCreatetrip = () => {
+        history.push("/CreateTripPage")
+    }
+
     return (
         <AdminDiv>
             <Buttons>
-                <button>Voltar</button>
-                <button>Criar Viagem</button>
+                <button onClick={goToHomePage}>Voltar</button>
+                <button onClick={goToCreatetrip}>Criar Viagem</button>
                 <button>Logout</button>
             </Buttons>
             <h1>Área Do Admin</h1>

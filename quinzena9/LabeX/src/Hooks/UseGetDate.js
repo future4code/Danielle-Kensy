@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import axios from "axios"
 
-const GetData = (endpoint, initialState) => {
+const UseGetData = (endpoint, initialState) => {
     const [data, setData] = useState(initialState)
 
     const getData = () => {
@@ -21,4 +21,4 @@ const GetData = (endpoint, initialState) => {
     return [data, getData]
 }
 
-export default GetData
+export default UseGetData

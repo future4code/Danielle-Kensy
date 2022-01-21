@@ -2,13 +2,13 @@ import React from "react"
 import styled from "styled-components"
 
 const Card = styled.div`
-    margin: 10px 0;
-    width: 250px;
-    height: 230px;
+    margin: 10px 0 20px;
+    width: 220px;
+    height: 210px;
     border-radius: 4px;
     background-color: #4F7142;
     padding: 8px 8px 8px 8px;
-    font-size: 90%;
+    font-size: 80%;
     -webkit-box-shadow: -6px 8px 8px 0px rgba(25, 105, 78, 0.75);
     -moz-box-shadow: -6px 8px 8px 0px rgba(25, 105, 78, 0.75);
     box-shadow: -6px 8px 8px 0px rgba(25, 105, 78, 0.75);

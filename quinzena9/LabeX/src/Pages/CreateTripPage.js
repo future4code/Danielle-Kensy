@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from "styled-components"
+import {useHistory} from "react-router-dom"
 
 const Buttons = styled.div`
     justify-content: space-around;
@@ -8,6 +9,12 @@ const Buttons = styled.div`
 `
 
 const CreateTripPage = () => {
+
+    const history = useHistory();
+
+    const goToAdminHome = () => {
+        history.push("/AdminHomePage")
+    }
 
     return (
         <div>
@@ -45,7 +52,7 @@ const CreateTripPage = () => {
                 />
             </form>
             <Buttons>
-                <button>Voltar</button>
+                <button onClick={goToAdminHome}>Voltar</button>
                 <button>Criar</button>
             </Buttons>
         </div>
