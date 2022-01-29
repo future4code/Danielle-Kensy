@@ -2,7 +2,7 @@
 
 Bem vindo a agência de viagens espaciais mais famosa do planeta terra (e fora dele também) a `SPACE TRYPPY`, aqui você pode se inscrever em qualquer uma de nossas incríveis viagens para fora do globo terreste e caso você seja sortudo será escolhido, então não perca tempo e confira nosso site no link abaixo!
 
-- [LINK SURGE]
+- https://foregoing-tooth.surge.sh/
 
 ## Tecnologias utilizadas
 Nesse projeto foram utilizadas várias funcionalidades do react e bibliotecas:
