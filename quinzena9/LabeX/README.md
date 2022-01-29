@@ -14,9 +14,9 @@ Nesse projeto foram utilizadas várias funcionalidades do react e bibliotecas:
 
 O site tem várias funcionalidades que buscam reproduzir um site de viagens, você pode conferir uma lista com as viagens, se inscrever para qualquer uma delas, e caso você tenha o login do admin:
 
-`Email` :
+`Email` : dani@gmail.com
 
-`Senha` :
+`Senha` : 666
 
 Você possui acesso completo ao gerenciamento, exclusão e alteração das viagens além de poder aprovar ou reprovar os candidatos que se inscrevem.
 

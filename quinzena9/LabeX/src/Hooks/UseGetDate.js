@@ -21,4 +21,4 @@ const UseGetData = (endpoint, initialState) => {
     return [data, getData]
 }
 
-export default UseGetData
+export default UseGetData 

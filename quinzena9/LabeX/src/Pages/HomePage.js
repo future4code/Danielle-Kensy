@@ -7,6 +7,7 @@ const Buttons = styled.div`
     justify-content: space-between;
     width: 270px;
     display: flex;
+    margin-left: 13px;
 `
 
 const LogoFrame = styled.img`
