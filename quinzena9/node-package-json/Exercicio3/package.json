@@ -1,0 +1,13 @@
+{
+  "name": "quinzena9",
+  "version": "1.0.0",
+  "description": "",
+  "main": "exercicio3.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "clear && echo carregando po perai... && node ./exercicio3.js"
+  },
+  "keywords": [],
+  "author": "Dani a mais bonita",
+  "license": "ISC"
+}
