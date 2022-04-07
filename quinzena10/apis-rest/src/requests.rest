@@ -1,0 +1,20 @@
+###
+GET http://localhost:3003/users
+
+###
+GET http://localhost:3003/users/NORMAL
+
+###
+GET http://localhost:3003/nome?name=Bob
+
+###
+PUT http://localhost:3003/criar
+Content-Type: application/json
+
+{
+    "id": 8,
+    "name": "Daani",
+    "email": "Dani@email.com",
+    "type": "ADMIN",
+    "age": 666
+}
