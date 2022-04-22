@@ -1,0 +1,5 @@
+### //endpoint teste
+GET http://localhost:3003/ping
+
+### //endpoint teste
+GET http://localhost:3003/user/Tony Ramos
