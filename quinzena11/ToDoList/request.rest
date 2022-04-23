@@ -1,0 +1,74 @@
+### //endpoint teste
+GET http://localhost:3003/ping
+
+### //endpoint pega todos usuários
+GET http://localhost:3003/user/all
+
+### //endpoint pega user por id
+GET http://localhost:3003/user/2
+
+### //endpoint pega user por query
+GET http://localhost:3003/user?name=malu
+
+### //endpoint pega tarefa por id tarefa
+GET http://localhost:3003/task/3
+
+### //Pegar tarefas criadas por um usuário
+GET http://localhost:3003/task?creatorUserId=2
+
+### //Pegar usuários responsáveis por uma tarefa
+GET http://localhost:3003/task/1/responsible
+
+### //endpoint criação usuário
+POST http://localhost:3003/user
+Content-Type: application/json
+
+{
+    "name": "astrodev",
+    "nickname": "astro",
+    "email": "aaa@gmail.com"
+}
+
+### //endpoint criação de tarefa
+POST http://localhost:3003/task
+Content-Type: application/json
+
+{
+	"title": "Alimentar o gato",
+	"description": "El gatooo el gatooo",
+	"limitDate": "04/06/2022",
+	"creatorUserId": 2
+}
+
+### //endpoint Atribuir um usuário responsável a uma tarefa
+POST http://localhost:3003/task/responsible
+Content-Type: application/json
+
+{
+    "taskId": 1,
+    "resUserID": 2
+}
+
+### //endpoint edição usuário
+PUT http://localhost:3003/user/edit/4
+Content-Type: application/json
+
+{
+    "name": "ZéZé",
+    "nickname": "zezeze"
+}
+
+### //MÉTODO ATUALIZAR STATUS
+PUT http://localhost:3003/task/status/4
+Content-Type: application/json
+
+{
+    "status": "doing"
+}
+
+### //MÉTODO DELETE TASK
+DELETE http://localhost:3003/task/2
+
+### //MÉTODO DELETE USER
+DELETE http://localhost:3003/user/4
+
