@@ -1,0 +1,12 @@
+
+###  // endpoint - buscar todos users
+GET http://localhost:3003/getAllUsers
+
+###  // endpoint - buscar users por nome query
+GET http://localhost:3003/getAllUsersQuery?nome=caio
+
+###  // endpoint - buscar users por tipo path
+GET http://localhost:3003/getAllUsersPath/cx
+
+###  // endpoint - buscar users com queries
+GET http://localhost:3003/getAllUsersOrder?sort=name&order=DESC&page=1
