@@ -1,0 +1,42 @@
+
+###  // endpoint - buscar todos users
+GET http://localhost:3003/users
+
+###  // endpoint - buscar todos produtos
+GET http://localhost:3003/products
+
+###  // endpoint - buscar as compras de um usuário
+GET http://localhost:3003/users/1/purchases
+
+###  // endpoint - criar usuários
+POST http://localhost:3003/users
+Content-Type: application/json
+
+{
+    "name": "Malu",
+    "email": "maluzinha@gmail.com",
+    "password": "123456"
+}
+
+###  // endpoint - criar produtos
+POST http://localhost:3003/products
+Content-Type: application/json
+
+{
+    "name": "Madeira",
+    "price": 12.20,
+    "imageUrl": "https://i.picsum.photos/id/181/200/200.jpg?hmac=hxgS3WEn2EsuxbTrdq37OVbnajtIHlPXzTKW0X_Gu-s"
+}
+
+###  // endpoint - registrar compras
+POST http://localhost:3003/purchases
+Content-Type: application/json
+
+{
+    "userID": "1", 
+    "productID": "1",
+    "quantity": 2
+}
+
+
+
