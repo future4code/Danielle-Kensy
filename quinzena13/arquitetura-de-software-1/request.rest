@@ -1,0 +1,16 @@
+###
+GET http://localhost:3003/all 
+
+###
+POST http://localhost:3003/createUser 
+Content-Type: application/json 
+
+{
+    "name": "Malu",
+    "nickname": "Maluzinha",
+    "email": "Malu@email.com",
+    "password": "666"
+}
+
+###
+DELETE http://localhost:3003/d856885b-3504-42b1-afe3-bc821b59b77a
