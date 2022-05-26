@@ -1,8 +1,4 @@
 import { app } from "./controller/app"
-import { UserController } from "./controller/UserController"
+import { userRouter } from "./controller/routes/userRouter"
 
-const userController = new UserController()
-
-app.post('/createUser', userController.createUser)
-app.get('/all', userController.getUser)
-app.delete('/:id', userController.deleteUser)
+app.use('/user', userRouter)

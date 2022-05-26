@@ -1,8 +1,8 @@
 ###
-GET http://localhost:3003/all 
+GET http://localhost:3003/user
 
 ###
-POST http://localhost:3003/createUser 
+POST http://localhost:3003/user/createUser 
 Content-Type: application/json 
 
 {
@@ -13,4 +13,4 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:3003/d856885b-3504-42b1-afe3-bc821b59b77a
+DELETE http://localhost:3003/user/d856885b-3504-42b1-afe3-bc821b59b77a
