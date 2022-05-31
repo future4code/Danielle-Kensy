@@ -1,5 +1,7 @@
-import { v4 as generateId } from "uuid";
 import { UserDatabase } from "../data/UserDatabase";
+import { CustomError, MissingID } from "../error/customError";
+import { UserInputDTO } from "../model/user";
+import { generateId } from "../services/generateId";
 
 
 export class UserBusiness {
@@ -15,14 +17,12 @@ export class UserBusiness {
     }
   }
 
-  public createUser = async (input: any) => {
+  public createUser = async (input: UserInputDTO) => {
     try {
       const { name, nickname, email, password } = input;
   
       if (!name || !nickname || !email || !password) {
-        throw new Error(
-          'Preencha os campos "name","nickname", "email" e "password"'
-        );
+        throw new CustomError(400, 'Preencha os campos "name","nickname", "email" e "password"')
       }
   
       const id: string = generateId();
@@ -45,9 +45,7 @@ export class UserBusiness {
       const id = input
 
       if (!id) {
-        throw new Error(
-          'Preencha os campos "name","nickname", "email" e "password"'
-        );
+        throw new MissingID()
       }
       
       const userDatabase = new UserDatabase();
