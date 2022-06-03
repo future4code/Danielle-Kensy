@@ -1,0 +1,39 @@
+###
+GET http://localhost:3003/posts/2c96cc54-3f10-408f-b622-5b3993667592
+
+###
+POST http://localhost:3003/users/create 
+Content-Type: application/json 
+
+{
+    "name": "Danizinha",
+    "email": "Dani@email.com",
+    "password": "666"
+}
+
+###
+POST http://localhost:3003/users/friendship
+Content-Type: application/json 
+
+{
+    "idUser": "09618ec1-768c-4107-94dd-16ca4707a397" , 
+    "idFriend": "c6c3a95a-62f3-4848-a88a-37fe8314237c"
+}
+
+###
+POST http://localhost:3003/posts/create 
+Content-Type: application/json 
+
+{
+    "photo": "https://i.picsum.photos/id/163/200/300.jpg?hmac=MHvt2U1kS_umJxJUqatJt-p78ljmX5Hxct3dxWTZRHA",
+    "description": "reading a little",
+    "authorId": "09618ec1-768c-4107-94dd-16ca4707a397"
+}
+
+###
+DELETE  http://localhost:3003/users/friendship/09618ec1-768c-4107-94dd-16ca4707a397
+Content-Type: application/json 
+
+{
+    "idFriend": "c6c3a95a-62f3-4848-a88a-37fe8314237c"
+}
