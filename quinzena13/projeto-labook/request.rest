@@ -2,12 +2,15 @@
 GET http://localhost:3003/posts/2c96cc54-3f10-408f-b622-5b3993667592
 
 ###
+GET http://localhost:3003/posts
+
+###
 POST http://localhost:3003/users/create 
 Content-Type: application/json 
 
 {
-    "name": "Danizinha",
-    "email": "Dani@email.com",
+    "name": "Guilerminho",
+    "email": "Gui@email.com",
     "password": "666"
 }
 

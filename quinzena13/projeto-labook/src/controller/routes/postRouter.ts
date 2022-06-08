@@ -1,9 +1,14 @@
 import express from 'express'
+import { PostBusiness } from '../../business/postBusiness'
+import { PostDatabase } from '../../data/postDatabase'
 import { PostController } from '../postController'
 
 export const postRouter = express.Router()
 
-const postController = new PostController()
+const postDatabase = new PostDatabase()
+const postBusiness = new PostBusiness(postDatabase)
+const postController = new PostController(postBusiness)
 
-postRouter.post('/create', postController.createPost)
-postRouter.get('/:id', postController.getPost)
+postRouter.get('/:id', (req,res) => postController.getPost(req,res))
+postRouter.get('/', (req,res) => postController.getAllPosts(req,res))
+postRouter.post('/create', (req,res) => postController.createPost(req,res))

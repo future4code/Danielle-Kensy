@@ -2,8 +2,25 @@ import { PostDatabase } from "../data/postDatabase";
 import { MissingParameters, MissingPostID } from "../error/customError";
 import { post, PostInputDTO } from "../model/post";
 import { generateId } from "../services/generateID";
+import { PostRepository } from "./postRepository";
 
 export class PostBusiness {
+
+    constructor(
+        private postDatabase: PostRepository
+    ){}
+
+    //método para busca de todos os post
+    public getAllPosts = async ():Promise <post[]> => {
+        try{
+            
+            return await this.postDatabase.getAllPost()
+
+        } catch (error:any) { 
+            throw new Error(error.message)
+        }
+    }
+
     //método para busca de post via id
     public getPost = async (id: string):Promise <post[]> => {
         try{
@@ -11,8 +28,7 @@ export class PostBusiness {
                 throw new MissingPostID()
             }
 
-            const postDatabase = new PostDatabase()
-            const post = await postDatabase.getPost(id)
+            const post = await this.postDatabase.getPost(id)
             
             return post
             
@@ -32,8 +48,7 @@ export class PostBusiness {
 
             const id: string = generateId()
 
-            const postDatabase = new PostDatabase()
-            await postDatabase.insertPost({
+            await this.postDatabase.insertPost({
                 id,
                 photo,
                 description,

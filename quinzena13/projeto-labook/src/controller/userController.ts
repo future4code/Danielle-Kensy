@@ -3,6 +3,11 @@ import { UserBusiness } from "../business/userBusiness"
 import { UserFriendshipInputDTO, UserInputDTO } from "../model/user"
 
 export class UserController {
+    //inversão de dependências
+    constructor(
+        private userBusiness: UserBusiness
+    ){}
+
     //método para criação de usuário
     public createUser = async (
         req: Request,
@@ -17,8 +22,7 @@ export class UserController {
                 password
             }
 
-            const userBusiness = new UserBusiness
-            userBusiness.createUser(input)
+            this.userBusiness.createUser(input)
             
             res.status(201).send({ message: "Usuário criado!" })
 
@@ -40,8 +44,7 @@ export class UserController {
                 idFriend
             }
 
-            const userBusiness = new UserBusiness
-            userBusiness.createUserFriendship(input)
+            this.userBusiness.createUserFriendship(input)
             
             res.status(201).send({ message: "Amizade Criada!" })
 
@@ -66,8 +69,8 @@ export class UserController {
                 idFriend
             }
 
-            const userBusiness = new UserBusiness
-            await userBusiness.deleteFriendship(input)
+            
+            await this.userBusiness.deleteFriendship(input)
             
             res.status(201).send({ message: "Amizade Deletada!" })
 

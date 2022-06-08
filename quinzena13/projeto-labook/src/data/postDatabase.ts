@@ -1,7 +1,22 @@
+import { PostRepository } from "../business/postRepository";
 import { post } from "../model/post";
 import { BaseDatabase } from "./baseDatabase";
 
-export class PostDatabase extends BaseDatabase {
+export class PostDatabase extends BaseDatabase implements PostRepository {
+    
+    //método para busca de todos os post
+    public getAllPost = async(
+    ): Promise <post[]> =>{
+        try{
+            const posts = await PostDatabase.connection
+            .select('*')
+            .from('labook_posts')
+            return posts
+        } catch (error:any) {
+            throw new Error(error.message)
+        }
+    }
+    
     //método para busca de post via id
     public getPost = async(
         id: string

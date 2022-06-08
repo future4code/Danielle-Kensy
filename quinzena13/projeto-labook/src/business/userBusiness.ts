@@ -1,9 +1,14 @@
-import { UserDatabase } from "../data/userDatabase"
 import { MissingParameters } from "../error/customError"
 import { UserFriendshipInputDTO, UserInputDTO } from "../model/user"
 import { generateId } from "../services/generateID"
+import { UserRepository } from "./userRepository"
 
 export class UserBusiness {
+    //inversão de dependências
+    constructor(
+        private userDatabase: UserRepository
+      ){}
+
     //método para criação de usuário
     public createUser = async (
       input: UserInputDTO
@@ -16,9 +21,8 @@ export class UserBusiness {
           }
       
           const id: string = generateId()
-      
-          const userDatabase = new UserDatabase()
-          await userDatabase.insertUser({
+               
+          await this.userDatabase.insertUser({
             id,
             name,
             email,
@@ -40,8 +44,7 @@ export class UserBusiness {
             throw new MissingParameters()
           }
       
-          const userDatabase = new UserDatabase()
-          await userDatabase.insertUserFriendship({
+          await this.userDatabase.insertUserFriendship({
             idUser, 
             idFriend
           })
@@ -62,8 +65,7 @@ export class UserBusiness {
           throw new MissingParameters()
         }
 
-        const userDatabase = new UserDatabase()
-        await userDatabase.deleteFriendship({
+        await this.userDatabase.deleteFriendship({
           idUser, 
           idFriend
         })

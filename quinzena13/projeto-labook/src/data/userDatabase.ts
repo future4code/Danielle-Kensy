@@ -1,7 +1,9 @@
+import { UserRepository } from "../business/userRepository"
 import { user, userFriendship } from "../model/user"
 import { BaseDatabase } from "./baseDatabase"
 
-export class UserDatabase extends BaseDatabase {
+export class UserDatabase extends BaseDatabase implements UserRepository {
+    
     //método para criação de usuário
     public insertUser = async(
         user: user
