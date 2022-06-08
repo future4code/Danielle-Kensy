@@ -10,13 +10,34 @@ Esse projeto consiste basicamente no **backend** integrado com banco de dados My
 
 Então vamos lá conhecer os `5` métods que constituem essa API:
 
+## <font color="pink">Buscar todos os posts</font>
+
+Utilizando a url com /posts:
+> http://localhost:3003/posts
+
+
+Você terá o retorno de um array com todos os posts:
+
+~~~
+[
+  {
+    "id": "2c96cc54-3f10-408f-b622-5b3993667592",
+    "photo": "https://i.picsum.photos/id/163/200/300.jpg?hmac=MHvt2U1kS_umJxJUqatJt-p78ljmX5Hxct3dxWTZRHA",
+    "description": "reading a little",
+    "type": "normal",
+    "created_at": "2022-06-02T22:19:07.000Z",
+    "author_id": "09618ec1-768c-4107-94dd-16ca4707a397"
+  }
+]
+~~~
+
 ## <font color="pink">Busca post via ID</font>
 
 Utilizando a url com /posts/:postID:
 > http://localhost:3003/posts/2c96cc54-3f10-408f-b622-5b3993667592
 
 
-Você terá o retorno de um array com todos as compras feitas por um usuários cadastradas no banco:
+Você terá o retorno de um array com o post especificado:
 
 ~~~
 [
