@@ -16,7 +16,7 @@ export class UserController {
            }
      
            const userBusiness = new UserBusiness
-           const token = userBusiness.createUser(input)
+           const token = await userBusiness.createUser(input)
      
            res.send({ message: "token gerado pelo jwt!", token })
         } catch (error:any) {
