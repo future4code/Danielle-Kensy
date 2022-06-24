@@ -61,7 +61,7 @@ export class UserController {
             const userBusiness = new UserBusiness
             const token = await userBusiness.createUser(input)
      
-            res.send({ message: "token gerado pelo jwt!", token })
+            res.send({ message: "Usuário cadastrado", token })
          } catch (error:any) {
               res.send(error.message)
          }

@@ -1,22 +1,22 @@
 ###
 GET http://localhost:3003/user/profile
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ1MTJlZWQ4LWFlYjItNDhkMS05OGNlLTEyZWRmODU3NjA3ZiIsImlhdCI6MTY1NjAyNTA4OCwiZXhwIjoxNjU2MDQzMDg4fQ.gjUT6kXyauVoMmQFvr5yJJi0WaTZzXcG8CMYMogiwRY
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ1MTJlZWQ4LWFlYjItNDhkMS05OGNlLTEyZWRmODU3NjA3ZiIsImlhdCI6MTY1NjA3ODQ5MSwiZXhwIjoxNjU2MDk2NDkxfQ.oW3DGy2Fj2xHpKu23PVqf3VgKQzaPtjTqYkPwS4ToCA
 
 ###
 GET http://localhost:3003/user/d512eed8-aeb2-48d1-98ce-12edf857607f
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ1MTJlZWQ4LWFlYjItNDhkMS05OGNlLTEyZWRmODU3NjA3ZiIsImlhdCI6MTY1NjAyNTA4OCwiZXhwIjoxNjU2MDQzMDg4fQ.gjUT6kXyauVoMmQFvr5yJJi0WaTZzXcG8CMYMogiwRY
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ1MTJlZWQ4LWFlYjItNDhkMS05OGNlLTEyZWRmODU3NjA3ZiIsImlhdCI6MTY1NjA3ODQ5MSwiZXhwIjoxNjU2MDk2NDkxfQ.oW3DGy2Fj2xHpKu23PVqf3VgKQzaPtjTqYkPwS4ToCA
 
 ###
 GET http://localhost:3003/recipe/f03542d2-f8c0-4f11-aeb0-e250b45159bc
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ1MTJlZWQ4LWFlYjItNDhkMS05OGNlLTEyZWRmODU3NjA3ZiIsImlhdCI6MTY1NjAyNTA4OCwiZXhwIjoxNjU2MDQzMDg4fQ.gjUT6kXyauVoMmQFvr5yJJi0WaTZzXcG8CMYMogiwRY
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ1MTJlZWQ4LWFlYjItNDhkMS05OGNlLTEyZWRmODU3NjA3ZiIsImlhdCI6MTY1NjA3ODQ5MSwiZXhwIjoxNjU2MDk2NDkxfQ.oW3DGy2Fj2xHpKu23PVqf3VgKQzaPtjTqYkPwS4ToCA
 
 ### 
 POST http://localhost:3003/user/signup
 Content-Type: application/json
 
 {
-    "name":"Malu",
-    "email": "Malu@email.com", 
+    "name":"Gui",
+    "email": "Gui@email.com", 
     "password": "gol@2015"
 }
 
