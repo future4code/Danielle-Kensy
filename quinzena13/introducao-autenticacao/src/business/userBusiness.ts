@@ -1,7 +1,11 @@
 import { UserDatabase } from "../data/userDatabase";
-import { UserInputDTO } from "../model/user";
+import { UserInputDTO, user } from "../model/user";
 import { Authenticator } from "../services/authenticator";
 import { generateId } from "../services/generateId";
+import { HashManager } from "../services/hashManager";
+
+const hashManager = new HashManager()
+const userDatabase = new UserDatabase()
 
 export class UserBusiness {
     public createUser = async (input: UserInputDTO):Promise<string> => {
@@ -13,14 +17,16 @@ export class UserBusiness {
           }
       
           const id: string = generateId()
+          const hashPassword = await hashManager.generateHash(password)
       
-          const userDatabase = new UserDatabase()
-          await userDatabase.insertUser({
+          const user: user = {
             id,
             email,
-            password,
-          })
-
+            password: hashPassword,
+          }
+       
+          await userDatabase.insertUser(user);
+          
           const authenticator = new Authenticator()
           const token = authenticator.generateToken({id})
           return token
